@@ -1,35 +1,54 @@
+.body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
 .heart {
-    position: relative;
-    width: 100px;
-    height: 90px;
-    background-color: red;
-    margin: 50px auto;
-    transform: rotate(-45deg);
-    animation: blink 1s infinite;
+  position: relative;
+  width: 100px;
+  height: 90px;
+  color: white;
+  text-align: center;
+  line-height: 90px;
+  transform: rotate(-45deg);
+  animation: pulse 1s infinite;
 }
 
-.heart::before,
-.heart::after {
-    content: "";
-    position: absolute;
-    width: 100px;
-    height: 90px;
-    background-color: red;
+.heart:before,
+.heart:after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  background-color: red;
+  border-radius: 50%;
 }
 
-.heart::before {
-    border-radius: 50px 50px 0 0;
-    top: -50px;
-    left: 0;
+.heart:before {
+  top: -50px;
+  left: 0;
 }
 
-.heart::after {
-    border-radius: 50px 50px 0 0;
-    top: 0;
-    left: 50px;
+.heart:after {
+  top: 0;
+  left: 50px;
 }
 
-@keyframes blink {
-    0%, 100% { opacity: 0.7; }
-    50% { opacity: 1; }
+@keyframes pulse {
+  0% {
+    transform: scale(0.95) rotate(-45deg);
+  }
+  70% {
+    transform: scale(1.15) rotate(-45deg);
+  }
+  100% {
+    transform: scale(1) rotate(-45deg);
+  }
 }
+
+/* 烟花效果的样式将在 JavaScript 中动态生成 */
