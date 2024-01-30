@@ -1,41 +1,35 @@
 .heart {
+    position: relative;
     width: 100px;
     height: 90px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: pink;
+    background-color: red;
+    margin: 50px auto;
+    transform: rotate(-45deg);
+    animation: blink 1s infinite;
 }
 
-.heart:before,
-.heart:after {
+.heart::before,
+.heart::after {
     content: "";
     position: absolute;
-    top: 0;
-    width: 50px;
-    height: 80px;
-    background-color: pink;
+    width: 100px;
+    height: 90px;
+    background-color: red;
+}
+
+.heart::before {
     border-radius: 50px 50px 0 0;
-}
-
-.heart:before {
-    left: 50px;
-    transform: rotate(-45deg);
-    transform-origin: 0 100%;
-}
-
-.heart:after {
+    top: -50px;
     left: 0;
-    transform: rotate(45deg);
-    transform-origin: 100% 100%;
+}
+
+.heart::after {
+    border-radius: 50px 50px 0 0;
+    top: 0;
+    left: 50px;
 }
 
 @keyframes blink {
     0%, 100% { opacity: 0.7; }
     50% { opacity: 1; }
-}
-
-.heart {
-    animation: blink 1s infinite;
 }
