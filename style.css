@@ -1,54 +1,14 @@
-.body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
 }
 
-.heart {
-  position: relative;
-  width: 100px;
-  height: 90px;
-  color: white;
-  text-align: center;
-  line-height: 90px;
-  transform: rotate(-45deg);
-  animation: pulse 1s infinite;
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.heart:before,
-.heart:after {
-  content: '';
-  position: absolute;
-  width: 100px;
-  height: 90px;
-  background-color: red;
-  border-radius: 50%;
-}
-
-.heart:before {
-  top: -50px;
-  left: 0;
-}
-
-.heart:after {
-  top: 0;
-  left: 50px;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(0.95) rotate(-45deg);
-  }
-  70% {
-    transform: scale(1.15) rotate(-45deg);
-  }
-  100% {
-    transform: scale(1) rotate(-45deg);
-  }
-}
-
-/* 烟花效果的样式将在 JavaScript 中动态生成 */
+/* 可以添加更多样式来定制页面 */
